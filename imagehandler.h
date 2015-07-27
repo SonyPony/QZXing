@@ -5,6 +5,7 @@
 #include <QImage>
 #include <QSharedPointer>
 #include <QQuickItemGrabResult>
+#include <QQuickItem>
 
 class ImageHandler : public QObject
 {
@@ -20,6 +21,7 @@ class ImageHandler : public QObject
                              const double width = 0, const double height = 0);
 
     public slots:
+        QImage makeScreen(QQuickItem* videoOutput);
         void emitConversionResult();
 
     signals:

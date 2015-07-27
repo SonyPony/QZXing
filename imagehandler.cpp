@@ -4,10 +4,21 @@
 #include <QQuickItem>
 #include <QQuickWindow>
 #include <QQuickItemGrabResult>
+#include <QQuickWindow>
 
 ImageHandler::ImageHandler(QObject *parent) :
     QObject(parent)
 {
+}
+
+QImage ImageHandler::makeScreen(QQuickItem *videoOutput)
+{
+    videoOutput->dumpObjectInfo();
+    QQuickWindow *window = videoOutput->window();
+    QImage image = window->grabWindow();
+
+    window = NULL;
+    return image;
 }
 
 void ImageHandler::extractQImage(QObject *imageObj,
