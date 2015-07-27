@@ -6,7 +6,6 @@
 #include <zxing/MultiFormatReader.h>
 #include <zxing/DecodeHints.h>
 #include "CameraImageWrapper.h"
-#include "imagehandler.h"
 #include <QTime>
 
 using namespace zxing;
@@ -14,17 +13,9 @@ using namespace zxing;
 QZXing::QZXing(QObject *parent) : QObject(parent)
 {
     decoder = new MultiFormatReader();
-    /*setDecoder(DecoderFormat_QR_CODE |
-               DecoderFormat_DATA_MATRIX |
-               DecoderFormat_UPC_E |
-               DecoderFormat_UPC_A |
-               DecoderFormat_EAN_8 |
-               DecoderFormat_EAN_13 |
-               DecoderFormat_CODE_128 |
-               DecoderFormat_CODE_39 |
-               DecoderFormat_ITF |
-               DecoderFormat_Aztec);*/
-    imageHandler = new ImageHandler();
+    setDecoder(DecoderFormat_QR_CODE);
+    imageHandler = new ImageHandler;
+    connect(imageHandler, SIGNAL(conversionDone(QImage)), this, SLOT(decodeImage(QImage)));
 }
 
 QZXing::QZXing(QZXing::DecoderFormat decodeHints, QObject *parent) : QObject(parent)
