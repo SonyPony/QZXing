@@ -18,6 +18,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#define NO_ICONV
 
 #include <zxing/qrcode/decoder/DecodedBitStreamParser.h>
 #include <zxing/common/CharacterSetECI.h>
@@ -38,7 +39,6 @@
 #define ICONV_CONST /**/
 #endif
 #include <qglobal.h>
-
 
 using namespace std;
 using namespace zxing;
