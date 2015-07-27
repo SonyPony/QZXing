@@ -87,13 +87,13 @@ public slots:
     /**
       * The decoding function accessible from QML
       */
-    QString decodeImageQML(QObject *item);
+    void decodeImageQML(QObject *item);
 
     /**
       * The decoding function accessible from QML. Able to set the decoding
       * of a portion of the image.
       */
-    QString decodeSubImageQML(QObject* item,
+    void decodeSubImageQML(QObject* item,
                               const double offsetX = 0 , const double offsetY = 0,
                               const double width = 0, const double height = 0);
 

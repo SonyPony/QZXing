@@ -140,24 +140,19 @@ QString QZXing::decodeImageFromFile(QString imageFilePath, int maxWidth, int max
     return decodeImage(QImage(imageFilePath), maxWidth, maxHeight, smoothTransformation);
 }
 
-QString QZXing::decodeImageQML(QObject *item)
+void QZXing::decodeImageQML(QObject *item)
 {
-    return decodeSubImageQML(item);
+    decodeSubImageQML(item);
 }
 
-QString QZXing::decodeSubImageQML(QObject* item,
+void QZXing::decodeSubImageQML(QObject* item,
                                   const double offsetX, const double offsetY,
                                   const double width, const double height)
 {
     if(item  == NULL)
-    {
         emit decodingFinished(false);
-        return "";
-    }
 
-    QImage img = ((ImageHandler*)imageHandler)->extractQImage(item, offsetX, offsetY, width, height);
-
-    return decodeImage(img);
+    imageHandler->extractQImage(item, offsetX, offsetY, width, height);
 }
 
 int QZXing::getProcessTimeOfLastDecoding()

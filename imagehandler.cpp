@@ -1,44 +1,27 @@
 #include "imagehandler.h"
-#include <QGraphicsObject>
 #include <QImage>
-#include <QPainter>
-#include <QStyleOptionGraphicsItem>
 #include <QDebug>
+#include <QQuickItem>
+#include <QQuickWindow>
+#include <QQuickItemGrabResult>
 
 ImageHandler::ImageHandler(QObject *parent) :
     QObject(parent)
 {
 }
 
-QImage ImageHandler::extractQImage(QObject *imageObj,
+void ImageHandler::extractQImage(QObject *imageObj,
                                    const double offsetX, const double offsetY,
                                    const double width, const double height)
 {
-    QGraphicsObject *item = qobject_cast<QGraphicsObject*>(imageObj);
+    QQuickItem* item = qobject_cast<QQuickItem*>(imageObj);
 
-    if (!item) {
-        qDebug() << "Item is NULL";
-        return QImage();
-    }
-
-    QImage img(item->boundingRect().size().toSize(), QImage::Format_RGB32);
-    img.fill(QColor(255, 255, 255).rgb());
-    QPainter painter(&img);
-    QStyleOptionGraphicsItem styleOption;
-    item->paint(&painter, &styleOption);
-
-    if(offsetX == 0 && offsetY == 0 && width == 0 && height == 0)
-        return img;
-    else
-    {
-        return img.copy(offsetX, offsetY, width, height);
-    }
+    disconnect(result.data(), SIGNAL(ready()), this, SLOT(emitConversionResult()));
+    result = item->grabToImage(QSize(item->width(), item->height()));
+    connect(result.data(), SIGNAL(ready()), this, SLOT(emitConversionResult()));
 }
 
-void ImageHandler::save(QObject *imageObj, const QString &path,
-                        const double offsetX, const double offsetY,
-                        const double width, const double height)
+void ImageHandler::emitConversionResult()
 {
-    QImage img = extractQImage(imageObj, offsetX, offsetY, width, height);
-    img.save(path);
+    emit conversionDone(result.data()->image());
 }
