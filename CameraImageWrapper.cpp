@@ -143,8 +143,11 @@ ArrayRef<char> CameraImageWrapper::getMatrix() const
     {
         ArrayRef<char> tmpRow;
         tmpRow = getRow(y, ArrayRef<char>(width));
-#if __cplusplus > 199711L
-        memcpy(m, tmpRow->values()..data(), width);
+
+#ifdef Q_OS_ANDROID
+        memcpy(m, &tmpRow->values()[0], width);
+#elif __cplusplus > 199711L
+        memcpy(m, &tmpRow->values()..data(), width);
 #else
 		memcpy(m, &tmpRow->values()[0], width);
 #endif
