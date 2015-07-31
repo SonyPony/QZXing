@@ -34,10 +34,6 @@ HEADERS += $$PWD/QZXing_global.h \
     $$PWD/zxing/zxing/BinaryBitmap.h \
     $$PWD/zxing/zxing/Binarizer.h \
     $$PWD/zxing/zxing/BarcodeFormat.h \
-    $$PWD/zxing/zxing/aztec/AztecReader.h \
-    $$PWD/zxing/zxing/aztec/AztecDetectorResult.h \
-    $$PWD/zxing/zxing/aztec/decoder/Decoder.h \
-    $$PWD/zxing/zxing/aztec/detector/Detector.h \
     $$PWD/zxing/zxing/common/StringUtils.h \
     $$PWD/zxing/zxing/common/Str.h \
     $$PWD/zxing/zxing/common/Point.h \
@@ -144,8 +140,6 @@ SOURCES += $$PWD/CameraImageWrapper.cpp \
     $$PWD/zxing/zxing/BinaryBitmap.cpp \
     $$PWD/zxing/zxing/Binarizer.cpp \
     $$PWD/zxing/zxing/BarcodeFormat.cpp \
-    $$PWD/zxing/zxing/aztec/AztecReader.cpp \
-    $$PWD/zxing/zxing/aztec/AztecDetectorResult.cpp \
     $$PWD/zxing/zxing/common/StringUtils.cpp \
     $$PWD/zxing/zxing/common/Str.cpp \
     $$PWD/zxing/zxing/common/PerspectiveTransform.cpp \
@@ -190,8 +184,6 @@ SOURCES += $$PWD/CameraImageWrapper.cpp \
     $$PWD/zxing/zxing/multi/qrcode/QRCodeMultiReader.cpp \
     $$PWD/zxing/zxing/multi/qrcode/detector/MultiFinderPatternFinder.cpp \
     $$PWD/zxing/zxing/multi/qrcode/detector/MultiDetector.cpp \
-    $$PWD/zxing/zxing/aztec/decoder/AztecDecoder.cpp \
-    $$PWD/zxing/zxing/aztec/detector/AztecDetector.cpp \
     $$PWD/zxing/zxing/datamatrix/DataMatrixVersion.cpp \
     $$PWD/zxing/zxing/datamatrix/decoder/DataMatrixDecoder.cpp \
     $$PWD/zxing/zxing/datamatrix/decoder/DataMatrixBitMatrixParser.cpp \

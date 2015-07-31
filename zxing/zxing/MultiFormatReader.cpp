@@ -19,7 +19,6 @@
 #include <zxing/MultiFormatReader.h>
 #include <zxing/qrcode/QRCodeReader.h>
 #include <zxing/datamatrix/DataMatrixReader.h>
-#include <zxing/aztec/AztecReader.h>
 #include <zxing/pdf417/PDF417Reader.h>
 #include <zxing/oned/MultiFormatUPCEANReader.h>
 #include <zxing/oned/MultiFormatOneDReader.h>
@@ -79,9 +78,6 @@ void MultiFormatReader::setHints(DecodeHints hints) {
   if (hints.containsFormat(BarcodeFormat::DATA_MATRIX)) {
     readers_.push_back(Ref<Reader>(new zxing::datamatrix::DataMatrixReader()));
   }
-  if (hints.containsFormat(BarcodeFormat::AZTEC)) {
-    readers_.push_back(Ref<Reader>(new zxing::aztec::AztecReader()));
-  }
   if (hints.containsFormat(BarcodeFormat::PDF_417)) {
     readers_.push_back(Ref<Reader>(new zxing::pdf417::PDF417Reader()));
   }
@@ -99,7 +95,6 @@ void MultiFormatReader::setHints(DecodeHints hints) {
     }
     readers_.push_back(Ref<Reader>(new zxing::qrcode::QRCodeReader()));
     readers_.push_back(Ref<Reader>(new zxing::datamatrix::DataMatrixReader()));
-    readers_.push_back(Ref<Reader>(new zxing::aztec::AztecReader()));
     readers_.push_back(Ref<Reader>(new zxing::pdf417::PDF417Reader()));
     // readers.add(new MaxiCodeReader());
 
