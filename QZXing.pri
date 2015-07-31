@@ -105,15 +105,6 @@ HEADERS += $$PWD/QZXing_global.h \
     $$PWD/zxing/zxing/multi/qrcode/QRCodeMultiReader.h \
     $$PWD/zxing/zxing/multi/qrcode/detector/MultiFinderPatternFinder.h \
     $$PWD/zxing/zxing/multi/qrcode/detector/MultiDetector.h \
-    $$PWD/zxing/zxing/pdf417/decoder/ec/ErrorCorrection.h \
-    $$PWD/zxing/zxing/pdf417/decoder/ec/ModulusGF.h \
-    $$PWD/zxing/zxing/pdf417/decoder/ec/ModulusPoly.h \
-    $$PWD/zxing/zxing/pdf417/decoder/BitMatrixParser.h \
-    $$PWD/zxing/zxing/pdf417/decoder/DecodedBitStreamParser.h \
-    $$PWD/zxing/zxing/pdf417/decoder/Decoder.h \
-    $$PWD/zxing/zxing/pdf417/detector/Detector.h \
-    $$PWD/zxing/zxing/pdf417/detector/LinesSampler.h \
-    $$PWD/zxing/zxing/pdf417/PDF417Reader.h \
     $$PWD/zxing/bigint/NumberlikeArray.hh \
     $$PWD/zxing/bigint/BigUnsignedInABase.hh \
     $$PWD/zxing/bigint/BigUnsigned.hh \
@@ -207,15 +198,6 @@ SOURCES += $$PWD/CameraImageWrapper.cpp \
     $$PWD/zxing/zxing/qrcode/QRVersion.cpp \
     $$PWD/zxing/zxing/qrcode/QRFormatInformation.cpp \
     $$PWD/zxing/zxing/qrcode/QRErrorCorrectionLevel.cpp \
-    $$PWD/zxing/zxing/pdf417/decoder/ec/ErrorCorrection.cpp \
-    $$PWD/zxing/zxing/pdf417/decoder/ec/ModulusGF.cpp \
-    $$PWD/zxing/zxing/pdf417/decoder/ec/ModulusPoly.cpp \
-    $$PWD/zxing/zxing/pdf417/decoder/PDF417BitMatrixParser.cpp \
-    $$PWD/zxing/zxing/pdf417/decoder/PDF417DecodedBitStreamParser.cpp \
-    $$PWD/zxing/zxing/pdf417/decoder/PDF417Decoder.cpp \
-    $$PWD/zxing/zxing/pdf417/detector/PDF417Detector.cpp \
-    $$PWD/zxing/zxing/pdf417/detector/LinesSampler.cpp \
-    $$PWD/zxing/zxing/pdf417/PDF417Reader.cpp \
     $$PWD/zxing/bigint/BigUnsignedInABase.cc \
     $$PWD/zxing/bigint/BigUnsigned.cc \
     $$PWD/zxing/bigint/BigIntegerUtils.cc \
