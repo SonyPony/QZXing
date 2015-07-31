@@ -18,7 +18,6 @@
 #include <zxing/ZXing.h>
 #include <zxing/MultiFormatReader.h>
 #include <zxing/qrcode/QRCodeReader.h>
-#include <zxing/datamatrix/DataMatrixReader.h>
 #include <zxing/oned/MultiFormatUPCEANReader.h>
 #include <zxing/oned/MultiFormatOneDReader.h>
 #include <zxing/ReaderException.h>
@@ -74,9 +73,6 @@ void MultiFormatReader::setHints(DecodeHints hints) {
   if (hints.containsFormat(BarcodeFormat::QR_CODE)) {
     readers_.push_back(Ref<Reader>(new zxing::qrcode::QRCodeReader()));
   }
-  if (hints.containsFormat(BarcodeFormat::DATA_MATRIX)) {
-    readers_.push_back(Ref<Reader>(new zxing::datamatrix::DataMatrixReader()));
-  }
   /*
   if (hints.contains(BarcodeFormat.MAXICODE)) {
     readers.add(new MaxiCodeReader());
@@ -90,7 +86,6 @@ void MultiFormatReader::setHints(DecodeHints hints) {
       readers_.push_back(Ref<Reader>(new zxing::oned::MultiFormatOneDReader(hints)));
     }
     readers_.push_back(Ref<Reader>(new zxing::qrcode::QRCodeReader()));
-    readers_.push_back(Ref<Reader>(new zxing::datamatrix::DataMatrixReader()));
     // readers.add(new MaxiCodeReader());
 
     if (tryHarder) {
