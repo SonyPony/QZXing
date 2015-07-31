@@ -60,20 +60,6 @@ HEADERS += $$PWD/QZXing_global.h \
     $$PWD/zxing/zxing/common/reedsolomon/ReedSolomonDecoder.h \
     $$PWD/zxing/zxing/common/reedsolomon/GenericGFPoly.h \
     $$PWD/zxing/zxing/common/reedsolomon/GenericGF.h \
-    $$PWD/zxing/zxing/oned/UPCEReader.h \
-    $$PWD/zxing/zxing/oned/UPCEANReader.h \
-    $$PWD/zxing/zxing/oned/UPCAReader.h \
-    $$PWD/zxing/zxing/oned/OneDResultPoint.h \
-    $$PWD/zxing/zxing/oned/OneDReader.h \
-    $$PWD/zxing/zxing/oned/MultiFormatUPCEANReader.h \
-    $$PWD/zxing/zxing/oned/MultiFormatOneDReader.h \
-    $$PWD/zxing/zxing/oned/ITFReader.h \
-    $$PWD/zxing/zxing/oned/EAN13Reader.h \
-    $$PWD/zxing/zxing/oned/EAN8Reader.h \
-    $$PWD/zxing/zxing/oned/Code128Reader.h \
-    $$PWD/zxing/zxing/oned/Code39Reader.h \
-    $$PWD/zxing/zxing/oned/CodaBarReader.h \
-    $$PWD/zxing/zxing/oned/Code93Reader.h \
     $$PWD/zxing/zxing/qrcode/Version.h \
     $$PWD/zxing/zxing/qrcode/QRCodeReader.h \
     $$PWD/zxing/zxing/qrcode/FormatInformation.h \
@@ -144,20 +130,6 @@ SOURCES += $$PWD/CameraImageWrapper.cpp \
     $$PWD/zxing/zxing/common/reedsolomon/ReedSolomonDecoder.cpp \
     $$PWD/zxing/zxing/common/reedsolomon/GenericGFPoly.cpp \
     $$PWD/zxing/zxing/common/reedsolomon/GenericGF.cpp \
-    $$PWD/zxing/zxing/oned/UPCEReader.cpp \
-    $$PWD/zxing/zxing/oned/UPCEANReader.cpp \
-    $$PWD/zxing/zxing/oned/UPCAReader.cpp \
-    $$PWD/zxing/zxing/oned/OneDResultPoint.cpp \
-    $$PWD/zxing/zxing/oned/OneDReader.cpp \
-    $$PWD/zxing/zxing/oned/MultiFormatUPCEANReader.cpp \
-    $$PWD/zxing/zxing/oned/MultiFormatOneDReader.cpp \
-    $$PWD/zxing/zxing/oned/ITFReader.cpp \
-    $$PWD/zxing/zxing/oned/EAN13Reader.cpp \
-    $$PWD/zxing/zxing/oned/EAN8Reader.cpp \
-    $$PWD/zxing/zxing/oned/Code128Reader.cpp \
-    $$PWD/zxing/zxing/oned/Code39Reader.cpp \
-    $$PWD/zxing/zxing/oned/CodaBarReader.cpp \
-    $$PWD/zxing/zxing/oned/Code93Reader.cpp \
     $$PWD/zxing/zxing/qrcode/QRCodeReader.cpp \
     $$PWD/zxing/zxing/multi/MultipleBarcodeReader.cpp \
     $$PWD/zxing/zxing/multi/GenericMultipleBarcodeReader.cpp \
